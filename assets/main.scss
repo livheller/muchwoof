@@ -1,0 +1,71 @@
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Quattrocento", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+nav {
+  background: rgb(55, 46, 41);
+  position: relative;
+  padding: 1rem 0 1rem 3rem;
+  border-bottom: rgb(240, 199, 94) solid 2px;
+
+  a {
+    color: lighten(rgb(240, 199, 94), 15%);
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+  a:hover {
+    color: rgb(236, 185, 57);
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding-right: 2rem;
+    }
+  }
+}
+
+.content {
+  min-height: calc(100vh - 60px);
+}
+
+footer {
+  height: 60px;
+  background: rgb(240, 199, 94);
+  text-align: center;
+  padding-top: 1rem;
+  border-top: rgb(55, 46, 41) solid 2px;
+}
+
+button {
+  background: #583400;
+  transition: background ease 0.25s;
+  border-radius: 23px;
+  display: inline-block;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin: 0;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+button:hover {
+  background: #a96800;
+}
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
