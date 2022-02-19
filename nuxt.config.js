@@ -21,7 +21,7 @@ export default {
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.https://fonts.googleapis.com/css2?family=Bungee&family=Quattrocento+Sans&display=swapcom/css?family=Montserrat:600|Rufina:700",
+        href: "https://fonts.googleapis/css2?family=Bungee&family=Quattrocento+Sans&display=swapcom/css?family=Montserrat:600|Rufina:700",
       },
     ],
   },
@@ -36,10 +36,17 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
-
+  buildModules: ["@nuxtjs/fontawesome"],
+  fontawesome: {
+    component: "fa",
+    icons: {
+      solid: ["faBone", "faCircle", "faAngleRight"],
+      brands: true,
+    },
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ["@nuxtjs/axios", "@nuxtjs/auth-next"],
+  auth: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
