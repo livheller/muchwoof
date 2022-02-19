@@ -98,7 +98,7 @@ export const state = () => ({
       binNumber: 7,
       isBoarding: true,
       balance: "$23.89",
-      picture: "dalmation.jpg",
+      picture: "dalmatian.jpg",
       age: 5,
       breed: "Dalmation",
       name: "Aurora",
@@ -220,7 +220,7 @@ export const state = () => ({
     {
       _id: "61d335ad9ac7e4866541fd08",
       binNumber: 30,
-      isBoarding: false,
+      isBoarding: true,
       balance: "$17.62",
       picture: "weimaraner.jpg",
       age: 7,
