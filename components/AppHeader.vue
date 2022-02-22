@@ -1,7 +1,7 @@
 <template>
   <section class="masthead" role="img" aria-label="Image Description">
     <h1>Much Woof!</h1>
-    <h3>A Doggo Daycare Database</h3>
+    <!-- <h3>A Doggo Daycare Database</h3> -->
   </section>
 </template>
 
@@ -28,16 +28,15 @@ h1 {
   letter-spacing: 0.03em;
   line-height: 1;
   text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8);
-  padding: 2rem 0 1rem 1rem;
+  padding: 1rem 0 1rem 1rem;
   position: absolute;
-  // margin-bottom: 1rem;
 }
 
 h3 {
   color: #eee;
   font-size: 7vmin;
   float: right;
-  padding: 3rem 2rem;
+  padding: 5rem 1rem;
   position: relative;
   text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8);
 }

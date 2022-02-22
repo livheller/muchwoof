@@ -11,9 +11,7 @@
       </section>
       <footer class="modal-footer">
         <slot name="footer"></slot>
-        <button type="button" class="btn-green" @click="close">
-          Close Modal
-        </button>
+        <button type="button" class="btn-brown" @click="close">Back</button>
       </footer>
     </div>
   </div>
@@ -33,11 +31,13 @@ export default {
 <style lang="scss" scoped>
 .modal-backdrop {
   position: fixed;
-  top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,6 +45,8 @@ export default {
 
 .modal {
   background: #ffffff;
+  padding: 20px;
+  width: 100%;
   box-shadow: 2px 2px 20px 1px;
   overflow-x: auto;
   display: flex;
@@ -60,14 +62,14 @@ export default {
 .modal-header {
   position: relative;
   border-bottom: 1px solid #eeeeee;
-  color: #4aae9b;
   justify-content: space-between;
 }
 
 .modal-footer {
   border-top: 1px solid #eeeeee;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  background: #ffffff;
 }
 
 .modal-body {
@@ -76,22 +78,22 @@ export default {
 }
 
 .btn-close {
+  color: rgb(55, 46, 41);
   position: absolute;
-  top: 0;
+  top: -1rem;
   right: 0;
   border: none;
   font-size: 20px;
   padding: 10px;
   cursor: pointer;
   font-weight: bold;
-  color: #4aae9b;
   background: transparent;
 }
 
-.btn-green {
+.btn-brown {
   color: white;
-  background: #4aae9b;
-  border: 1px solid #4aae9b;
-  border-radius: 2px;
+  background: lighten(rgb(55, 46, 41), 10%);
+  border: 1px solid black;
+  border-radius: 15px;
 }
 </style>

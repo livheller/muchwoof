@@ -1,30 +1,37 @@
 <template>
-  <section class="doginfo container">
-    <div v-for="dog in datasource" :key="dog.id">
-      <div class="cardinfo">
-        <img :src="dog.picture" :alt="`Picture of a dog named ${dog.name}`" />
-        <h2>{{ dog.name }}</h2>
-        <h3>{{ dog.breed }}</h3>
-        <p>Owner: {{ dog.owner[0].name }}</p>
+  <section class="container">
+    <section class="doginfo-thumbnail">
+      <div v-for="dog in datasource" :key="dog.id">
+        <div class="cardinfo">
+          <img :src="dog.picture" :alt="`Picture of a dog named ${dog.name}`" />
+          <h2>{{ dog.name }}</h2>
+          <h3>{{ dog.breed }}</h3>
 
-        <fa
-          icon="angle-right"
-          type="button"
-          class="icon arrow"
-          @click="showModal(dog)"
-        />
+          <fa
+            icon="angle-right"
+            type="button"
+            class="icon arrow"
+            @click="showModal(dog)"
+          />
 
-        <p v-if="dog.isBoarding" class="label">
-          <fa icon="bone" class="icon" />
-          <span>Boarding</span>
-        </p>
+          <p v-if="dog.isBoarding" class="label">
+            <fa icon="bone" class="icon" />
+            <span>Boarding</span>
+          </p>
+        </div>
       </div>
-    </div>
-    <AppDogModal v-show="isModalOpen" @close="closeModal">
-      <template v-slot:body>
-        <AppDogCard :data="dogData"> </AppDogCard>
-      </template>
-    </AppDogModal>
+    </section>
+    <section class="doginfo-modal">
+      <AppDogModal
+        v-show="isModalOpen"
+        @close="closeModal"
+        class="doginfo-modal-box"
+      >
+        <template v-slot:body>
+          <AppDogCard :data="dogData"> </AppDogCard>
+        </template>
+      </AppDogModal>
+    </section>
   </section>
 </template>
 
@@ -58,7 +65,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section.doginfo {
+section.doginfo-thumbnail {
   padding: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -92,6 +99,18 @@ section.doginfo {
     left: 0.4rem;
   }
 }
+
+.doginfo-modal {
+  z-index: 20;
+  position: fixed;
+  left: 50%;
+  bottom: -17rem;
+  transform: translate(-50%, -50%);
+}
+.doginfo-modal-box {
+  width: max-content;
+}
+
 .cardinfo {
   height: 30rem;
   width: fit-content;
@@ -100,6 +119,7 @@ section.doginfo {
   position: relative;
   .arrow {
     position: absolute;
+    cursor: pointer;
     color: black;
     font-size: 4rem;
     left: 15rem;
