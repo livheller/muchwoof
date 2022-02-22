@@ -2,7 +2,7 @@
   <main class="container">
     <h1>Landing Page Content</h1>
     <section>Welcome</section>
-    <section>Please login</section>
+    <section>This page will contain a login modal</section>
   </main>
 </template>
 
