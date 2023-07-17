@@ -19,9 +19,11 @@ export default {
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      // nfont for snippet
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis/css2?family=Bungee&family=Quattrocento+Sans&display=swapcom/css?family=Montserrat:600|Rufina:700",
+        // href: "https://fonts.googleapis/css2?family=Bungee&family=Quattrocento+Sans&display=swapcom/css?family=Montserrat:600|Rufina:700",
+        href: `https://webfonts.googleapis.com/v1/webfonts?family=Bungee&family=Quattrocento&family=Sans&key=${process.env.GOOGLE_FONTS_API_KEY}`,
       },
     ],
   },
@@ -30,7 +32,7 @@ export default {
   css: ["~/assets/main.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ["~/plugins/getdogdata.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

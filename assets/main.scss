@@ -43,7 +43,7 @@ nav {
 .content {
   min-height: calc(100vh - 4rem);
 }
-
+// make sure the footer height is what's being subtracted from 100vh
 footer {
   height: 4rem;
   background: rgb(240, 199, 94);
