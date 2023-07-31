@@ -27,14 +27,13 @@
 <style lang="scss" scoped>
 label {
     font-size: 1.5rem;
-    margin-right: 1rem
+    margin-right: 1rem;
 }
 select {
     width: 60%;
     padding: 3px;
+    margin: 4px;
 }
-.selectcontainer {
-   display: flex
-}
+
 
 </style>
