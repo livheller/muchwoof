@@ -14,7 +14,7 @@
             @click="showModal(dog)"
           />
 
-          <p v-if="dog.isBoarding" class="label">
+          <p v-if="dog.boardingStatus.includes('Boarding')" class="label">
             <fa icon="bone" class="icon" />
             <span>Boarding</span>
           </p>

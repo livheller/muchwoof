@@ -4,7 +4,7 @@
     <div name="card-dog" class="card-body">
       <div class="card-image">
         <img :src="data.picture" :alt="`Picture of a dog named ${data.name}`" />
-        <p v-if="data.isBoarding" class="label">
+        <p v-if="data.boardingStatus.includes('Boarding')" class="label">
           <fa icon="bone" class="icon" />
           <span>Boarding</span>
         </p>
@@ -32,7 +32,7 @@ export default {
     data: {
       type: [Array, Object],
     },
-  },
+  }
 };
 </script>
 

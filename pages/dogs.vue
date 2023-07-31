@@ -21,17 +21,31 @@ export default {
   computed: {
     ...mapState(["dogdata"]),
     filteredDogs() {
-      if (this.selectedService) {
+      if (this.selectedService && !this.selectedStatus) {
         return this.dogdata.filter(el => {
           let services = el.services;
-          return services.includes(this.selectedService)
-            })
+          return services?.includes(this.selectedService)
+        })
         
+      } else if (this.selectedStatus && !this.selectedService) {
+        return this.dogdata.filter(el => {
+          let status = el.boardingStatus;
+          return status?.includes(this.selectedStatus)
+        })
+      } else if (this.selectedService && this.selectedStatus) {
+        return this.dogdata.filter(el => {
+          let services = el.services;
+          let status = el.boardingStatus;
+          if (status?.includes(this.selectedStatus) && services?.includes(this.selectedService)) {
+            return el;
+            
+          }
+        })
       }
       return this.dogdata
     },
     boardingFilterOptions() {
-      return ["Boarding", "Daycare", "Not Checked-In"]
+      return ["Boarding", "Checked-In", "Not Checked-In"]
     }
   },
 
@@ -43,6 +57,7 @@ export default {
   data() {
     return {
       selectedService: "",
+      selectedStatus: "",
     }
   }
 };
@@ -51,7 +66,7 @@ export default {
 <style lang="scss" scoped>
 h1 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 600;
   padding-top: 3rem;
 }
@@ -64,7 +79,8 @@ hr {
 }
 .filtersContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin-top: 1rem;
+  margin-left: 5rem;
 }
 </style>
