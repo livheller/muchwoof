@@ -1,11 +1,11 @@
 <template>
     <div class="selectcontainer">
-<label :for="select">Filter by {{ select }}</label>
-<select @change="$emit('change', $event.target.value)" :id="select" name="select">
-<option value> -- Please Select a {{ select }}</option>
-<option v-for="option in selectOptions" :key="option" :value="option">{{ option }}</option>
+        <label :for="select">Filter by {{ select }}</label>
+        <select @change="$emit('change', $event.target.value)" :id="select" name="select">
+            <option value> -- Please Select a {{ select }}</option>
+            <option v-for="option in selectOptions" :key="option" :value="option">{{ option }}</option>
 
-</select>
+        </select>
     </div>
 </template>
 

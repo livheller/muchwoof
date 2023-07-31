@@ -18,6 +18,7 @@ nav {
   position: relative;
   padding: 1rem 0 1rem 3rem;
   border-bottom: rgb(240, 199, 94) solid 2px;
+  z-index: 20;
 
   a {
     color: lighten(rgb(240, 199, 94), 15%);
