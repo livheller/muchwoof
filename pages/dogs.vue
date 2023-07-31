@@ -79,7 +79,8 @@ hr {
 }
 .filtersContainer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 1rem;
+  margin-left: 5rem;
 }
 </style>
