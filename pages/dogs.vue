@@ -32,6 +32,15 @@ export default {
           let status = el.boardingStatus;
           return status?.includes(this.selectedStatus)
         })
+      } else if (this.selectedService && this.selectedStatus) {
+        return this.dogdata.filter(el => {
+          let services = el.services;
+          let status = el.boardingStatus;
+          if (status?.includes(this.selectedStatus) && services?.includes(this.selectedService)) {
+            return el;
+            
+          }
+        })
       }
       return this.dogdata
     },
