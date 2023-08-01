@@ -4,20 +4,24 @@
       <li><nuxt-link exact to="/">Home</nuxt-link></li>
       <li><nuxt-link to="/dogs">Dogs</nuxt-link></li>
       <li><nuxt-link to="/about">About</nuxt-link></li>
-      <li>
+    </ul>
+    <section class="pawContainer">
         <nuxt-link to="/dogs">
           <AppPawPrint />
         </nuxt-link>
-      </li>
-    </ul>
+    </section>
   </nav>
 </template>
 
 <style lang="scss" scoped>
+section {
+float: right;
+}
 svg {
-  position: relative;
-  left: 54rem;
   width: 4rem;
+  margin-top: -3rem;
+  margin-bottom: 2rem;
+  margin-right: 1.5rem;
 }
 </style>
 

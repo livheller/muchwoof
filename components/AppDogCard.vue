@@ -20,6 +20,9 @@
         <p>{{ detail.email }}</p>
         <p>{{ detail.phone }}</p>
         <p>{{ detail.address }}</p>
+        <nuxt-link :to="`/dog/${data.id}`">
+          <button class="editBtn" type="button">Edit</button>
+        </nuxt-link>
       </div>
     </div>
   </section>
@@ -32,7 +35,7 @@ export default {
     data: {
       type: [Array, Object],
     },
-  }
+  },
 };
 </script>
 
@@ -88,5 +91,15 @@ img {
   height: 15rem;
   width: 17rem;
   border: 2px solid rgb(55, 46, 41, 0.5);
+  box-shadow: 6px 12px 5px 1px rgb(55, 46, 41, 0.2);
+}
+.editBtn {
+  width: 7rem;
+  background: lighten(rgb(240, 199, 94), 5%);
+  color: darken(rgb(55, 46, 41), 10%);
+  border: solid 1px black;
+  position: absolute;
+  bottom: 2.6rem;
+  right: 4rem;
 }
 </style>

@@ -7,6 +7,8 @@
 
 <style lang="scss" scoped>
 .masthead {
+  position: relative;
+  top: -2.5rem;
   width: 100%;
   height: 70vh;
   overflow: hidden;
