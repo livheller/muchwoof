@@ -42,7 +42,15 @@ export default {
   fontawesome: {
     component: "fa",
     icons: {
-      solid: ["faBone", "faCircle", "faAngleRight"],
+      solid: [
+        "faBone",
+        "faCircle",
+        "faAngleRight",
+        "faEnvelope",
+        "faEdit",
+        "faPhone",
+        "faHouseUser",
+      ],
       brands: true,
     },
   },

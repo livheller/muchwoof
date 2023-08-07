@@ -2,17 +2,12 @@
   <section class="container">
     <section class="doginfo-thumbnail">
       <div v-for="dog in datasource" :key="dog.id">
-        <div class="cardinfo">
+        <div class="cardinfo" @click="showModal(dog)" type="button">
           <img :src="dog.picture" :alt="`Picture of a dog named ${dog.name}`" />
           <h2>{{ dog.name }}</h2>
           <h3>{{ dog.breed }}</h3>
 
-          <fa
-            icon="angle-right"
-            type="button"
-            class="icon arrow"
-            @click="showModal(dog)"
-          />
+          <fa icon="angle-right" class="icon arrow" />
 
           <p v-if="dog.boardingStatus.includes('Boarding')" class="label">
             <fa icon="bone" class="icon" />
@@ -117,9 +112,9 @@ section.doginfo-thumbnail {
   padding: 1rem;
   box-shadow: 2px 6px 6px 0 rgb(215, 215, 215);
   position: relative;
+  cursor: pointer;
   .arrow {
     position: absolute;
-    cursor: pointer;
     color: black;
     font-size: 4rem;
     left: 15rem;

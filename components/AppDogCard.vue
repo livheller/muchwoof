@@ -1,6 +1,7 @@
 <template>
   <section class="card" v-if="data">
     <h1>{{ data.name }}</h1>
+    <hr />
     <div name="card-dog" class="card-body">
       <div class="card-image">
         <img :src="data.picture" :alt="`Picture of a dog named ${data.name}`" />
@@ -16,10 +17,11 @@
         <p>Age: {{ data.age }}</p>
       </div>
       <div class="card-dog-owner" :key="detail.id" v-for="detail in data.owner">
-        <p>{{ detail.name }}</p>
-        <p>{{ detail.email }}</p>
-        <p>{{ detail.phone }}</p>
-        <p>{{ detail.address }}</p>
+        <fa icon="edit" class="icon edit" />
+        <h2>{{ detail.ownerName }}</h2>
+        <p><fa icon="envelope" class="icon" /> {{ detail.email }}</p>
+        <p><fa icon="phone" class="icon" /> {{ detail.phone }}</p>
+        <p><fa icon="house-user" class="icon" /> {{ detail.address }}</p>
         <nuxt-link :to="`/dog/${data.id}`">
           <button class="editBtn" type="button">Edit</button>
         </nuxt-link>
@@ -40,11 +42,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+hr {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  color: black;
+}
 .card {
   width: 55rem;
   height: 28rem;
   background-color: rgb(55, 46, 41, 0.1);
   padding: 1rem;
+}
+.edit {
+  float: right;
+  position: relative;
 }
 .card-body {
   display: grid;
@@ -81,11 +94,20 @@ export default {
 
 .card-dog-info {
   grid-column: 2;
+  margin-left: 2rem;
+}
+.card-dog-owner {
+  border: 1px solid lighten(rgb(55, 46, 41), 60%);
+  padding: 1rem;
 }
 h1 {
-  font-size: 2rem;
-  padding: 1rem;
+  font-size: 3rem;
+  padding: 0rem 1rem;
   text-align: center;
+}
+h2 {
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 img {
   height: 15rem;
@@ -95,11 +117,15 @@ img {
 }
 .editBtn {
   width: 7rem;
-  background: lighten(rgb(240, 199, 94), 5%);
+  background: lighten(rgb(240, 199, 94), 2%);
   color: darken(rgb(55, 46, 41), 10%);
   border: solid 1px black;
   position: absolute;
-  bottom: 2.6rem;
+  bottom: 2.7rem;
   right: 4rem;
+}
+p {
+  font-weight: 500;
+  margin: 0.5rem 0;
 }
 </style>
