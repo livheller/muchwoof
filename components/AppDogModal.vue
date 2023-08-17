@@ -83,7 +83,7 @@ export default {
   top: -1rem;
   right: 0;
   border: none;
-  font-size: 20px;
+  font-size: 1.5rem;
   padding: 10px;
   cursor: pointer;
   font-weight: bold;
