@@ -92,8 +92,11 @@ export default {
 
 .btn-brown {
   color: white;
-  background: lighten(rgb(55, 46, 41), 10%);
+  background: lighten(rgb(55, 46, 41), 20%);
   border: 1px solid black;
   border-radius: 15px;
+}
+.btn-brown:hover {
+  background: lighten(rgb(55, 46, 41), 10%);
 }
 </style>

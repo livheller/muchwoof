@@ -17,9 +17,24 @@
       </div>
 
       <div class="card-dog-info">
-        <p>Breed: {{ data.breed }}</p>
-        <p>Sex: {{ data.gender }}</p>
-        <p>Age: {{ data.age }}</p>
+        <p><b>Breed:</b> {{ data.breed }}</p>
+        <p><b>Sex:</b> {{ data.gender }}</p>
+        <p><b>Age:</b> {{ data.age }}</p>
+        <h2 class="activities-text">
+          Activities:&nbsp;
+          <nuxt-link :to="`/calendar`" class="calendar-link"
+            >Go To Calendar
+          </nuxt-link>
+        </h2>
+        <div class="icon-container">
+          <fa icon="bath" class="icon" />
+          <fa icon="utensils" class="icon" />
+          <fa icon="syringe" class="icon" />
+          <fa icon="tooth" class="icon" />
+          <fa icon="shoe-prints" class="icon" />
+          <fa icon="hiking" class="icon" />
+          <fa icon="baseball-ball" class="icon" />
+        </div>
       </div>
       <div class="card-owner-container">
         <div
@@ -34,7 +49,7 @@
           <p><fa icon="house-user" class="icon" /> {{ detail.address }}</p>
         </div>
         <!-- @TODO make text dynamic based on whether they're checked in or not -->
-        <button class="check-in-btn" type="button">Check-Out</button>
+        <button class="check-in-out-btn" type="button">Check-Out</button>
       </div>
     </div>
   </section>
@@ -110,9 +125,16 @@ hr {
 
 .card-dog-info {
   grid-column: 2;
-  margin-left: 2rem;
+  margin-left: 1rem;
   p {
-    font-weight: 700;
+    font-weight: 400;
+  }
+  .icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  h2 {
+    margin-top: 2rem;
   }
 }
 .card-owner-container {
@@ -130,6 +152,9 @@ hr {
     float: left;
     text-align: left;
     margin-top: 0.3rem;
+    .icon {
+      margin-top: 0.4rem;
+    }
   }
 }
 h1 {
@@ -147,12 +172,39 @@ img {
   border: 2px solid rgb(55, 46, 41, 0.5);
   box-shadow: 6px 12px 5px 1px rgb(55, 46, 41, 0.2);
 }
-.check-in-btn {
-  width: 10rem;
+.calendar-link {
+  font-size: small;
+  color: #a96800;
+  padding-top: 0.6rem;
+}
+.calendar-link:hover {
+  color: black;
+}
+.activities-text {
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.icon-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1rem;
+  column-gap: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 50%;
+}
+.check-in-out-btn {
+  width: 9.5rem;
   background: lighten(rgb(240, 199, 94), 2%);
   color: darken(rgb(55, 46, 41), 10%);
   border: solid 1px black;
   font-weight: 600;
+}
+.check-in-out-btn:hover {
+  background: darken(rgb(240, 199, 94), 25%);
+  color: antiquewhite;
+  border: solid 1px lighten(rgb(55, 46, 41), 20%);
 }
 p {
   font-weight: 500;

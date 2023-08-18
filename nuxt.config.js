@@ -1,3 +1,10 @@
+import {
+  faBaseballBall,
+  faHiking,
+  faPlay,
+  faShoePrints,
+} from "@fortawesome/free-solid-svg-icons";
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -50,6 +57,13 @@ export default {
         "faEdit",
         "faPhone",
         "faHouseUser",
+        "faBath",
+        "faUtensils",
+        "faSyringe",
+        "faTooth",
+        "faShoePrints",
+        "faHiking",
+        "faBaseballBall",
       ],
       brands: true,
     },
