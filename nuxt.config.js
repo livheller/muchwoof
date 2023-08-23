@@ -1,3 +1,10 @@
+import {
+  faBaseballBall,
+  faHiking,
+  faPlay,
+  faShoePrints,
+} from "@fortawesome/free-solid-svg-icons";
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -42,7 +49,22 @@ export default {
   fontawesome: {
     component: "fa",
     icons: {
-      solid: ["faBone", "faCircle", "faAngleRight"],
+      solid: [
+        "faBone",
+        "faCircle",
+        "faAngleRight",
+        "faEnvelope",
+        "faEdit",
+        "faPhone",
+        "faHouseUser",
+        "faBath",
+        "faUtensils",
+        "faSyringe",
+        "faTooth",
+        "faShoePrints",
+        "faHiking",
+        "faBaseballBall",
+      ],
       brands: true,
     },
   },
