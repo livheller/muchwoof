@@ -83,9 +83,12 @@
 </template>
 
 <script>
-import { CapitalizeFirstLetter } from "../util/CapitalizeFirstLetter";
+import AppSharedTextArea from "./AppSharedTextArea.vue";
 
 export default {
+  components: {
+    AppSharedTextArea,
+  },
   name: "Card",
   props: {
     data: {
@@ -230,11 +233,8 @@ img {
 .icon-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  row-gap: 1rem;
   column-gap: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  height: 50%;
+  height: 29%;
 }
 .check-in-out-btn {
   width: 9.5rem;
