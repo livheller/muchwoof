@@ -60,7 +60,6 @@
             icon="baseball-ball"
             class="icon"
           />
-          <AppSharedTextArea :data="data.notes" />
         </div>
       </div>
       <div class="card-owner-container">
@@ -84,7 +83,6 @@
 </template>
 
 <script>
-import { CapitalizeFirstLetter } from "../util/CapitalizeFirstLetter";
 import AppSharedTextArea from "./AppSharedTextArea.vue";
 
 export default {
